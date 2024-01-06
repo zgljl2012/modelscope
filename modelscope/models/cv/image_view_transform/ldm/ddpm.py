@@ -16,7 +16,8 @@ import torch
 import torch.nn as nn
 from einops import rearrange, repeat
 from omegaconf import ListConfig
-from pytorch_lightning.utilities.distributed import rank_zero_only
+# https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/11458
+from pytorch_lightning.utilities.rank_zero import rank_zero_only
 from torch.optim.lr_scheduler import LambdaLR
 from torchvision.utils import make_grid
 from tqdm import tqdm
